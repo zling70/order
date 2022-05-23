@@ -1,0 +1,11 @@
+本项目是一个对接<后端api6test>的前端项目，结合vue3+vite+router+elementplus+vxe（表格和弹窗），简单的。
+安装：
+拷贝本项目后，运行
+npm install
+如果有错误，要先解决错误，否则：
+运行项目
+npx vite
+就可以启动运行了。
+
+
+
