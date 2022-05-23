@@ -1,11 +1,8 @@
 
 <template>
   <div id="content">
-    <router-link to="/test">测试表单</router-link> |
-    <router-link to="/testgrid">测试表格</router-link> |
-    <router-link to="/testtb">测试表格3</router-link> |
     <router-link to="/order">订单</router-link> |
-    <router-link to="/order2">订单2</router-link> |
+    <router-link to="/order2">静态订单</router-link> |
     <router-link to="/ordervxe">vxe版</router-link> |
     <router-link to="/custlist">客户列表</router-link> |
     <router-link to="/customer">客户详情</router-link> |
