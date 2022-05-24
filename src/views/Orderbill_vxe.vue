@@ -210,7 +210,7 @@
       style="width: 20px; height: 20px; margin: 8px; color: #409efc"
       @click="loadbill"
     />
-    <DeleteLocation
+    <Scissor
       style="width: 20px; height: 20px; margin: 8px; color: #409efc"
       @click="cleandata"
     />
