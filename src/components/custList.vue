@@ -29,7 +29,7 @@
     const emit = defineEmits(['isselected'])  //关键代码，自定义事件名称'isselected'
     onMounted(()=>{
           proxy.axios
-            .get("https://127.0.0.1:5001/api/Customer")
+            .get("https://172.16.3.43:5001/api/Customer")
             .then(function (response) {
             //zling 处理成功情况,调用函数，返回数据的填充表格
             fillCustomers(response.data);

@@ -82,7 +82,7 @@ const findbyId = () => {
   }
   //ajax从后台获取指定编号的客户
   proxy.axios
-    .get("https://localhost:5001/api/customer/"+custid)
+    .get("https://172.16.3.43:5001/api/customer/"+custid)
     .then(function (response) {
       //zling 处理成功情况,调用函数，返回指定编号客户信息
       showCustomers(response.data);

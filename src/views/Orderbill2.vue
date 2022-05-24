@@ -120,8 +120,8 @@ const { proxy } = getCurrentInstance()     //获取实例对象后解构出proxy
 //1.加载最新一张单据 (1,2,3方法可以精简，抽取相同部分组成一个公共方法，不同部分仅限于URL)
 const loadbill = function () {
     alert('hello')
-    //instance.proxy.axios.get('https://localhost:5001/api/Orderbill/GetEnd')
-    proxy.axios.get('https://localhost:5001/api/Orderbill/GetEnd')
+    //instance.proxy.axios.get('https://172.16.3.43:5001/api/Orderbill/GetEnd')
+    proxy.axios.get('https://172.16.3.43:5001/api/Orderbill/GetEnd')
         .then(function (response) {
             // 处理成功情况
             //console.log(response)            
@@ -139,7 +139,7 @@ const loadbill = function () {
 //2.朝前分页，加载比当前单据更小的（单据号码）一张单据
 const toPrebill = function(){
     alert('当前的单据号是：'+bill.obj.billno)
-    proxy.axios.get('https://localhost:5001/api/Orderbill/Prebill?billno=' + bill.obj.billno)
+    proxy.axios.get('https://172.16.3.43:5001/api/Orderbill/Prebill?billno=' + bill.obj.billno)
         .then(function (response) {
             filldata(response.data)
         })
@@ -152,7 +152,7 @@ const toPrebill = function(){
 }
 //3.朝后分页，加载比当前单据更小的（单据号码）一张单据
 const toNextbill = function(){
-    proxy.axios.get('https://localhost:5001/api/Orderbill/Nextbill?billno=' + bill.obj.billno)
+    proxy.axios.get('https://172.16.3.43:5001/api/Orderbill/Nextbill?billno=' + bill.obj.billno)
         .then(function (response) {
             filldata(response.data)
         })

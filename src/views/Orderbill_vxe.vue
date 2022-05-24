@@ -308,9 +308,9 @@ const removeChecked = () => {
 
 //3加载最新一张单据
 const loadbill = function () {
-  //instance.proxy.axios.get('https://localhost:5001/api/Orderbill/GetEnd')
+  //instance.proxy.axios.get('https://172.16.3.43:5001/api/Orderbill/GetEnd')
   proxy.axios
-    .get("https://localhost:5001/api/Orderbill/GetEnd")
+    .get("https://172.16.3.43:5001/api/Orderbill/GetEnd")
     .then(function (response) {
       // 处理成功情况
       //console.log(response)
@@ -329,7 +329,7 @@ const toPrebill = function () {
   //alert("当前的单据号是：" + bill.obj.billno);
   proxy.axios
     .get(
-      "https://localhost:5001/api/Orderbill/Prebill?billno=" + bill.obj.billno
+      "https://172.16.3.43:5001/api/Orderbill/Prebill?billno=" + bill.obj.billno
     )
     .then(function (response) {
       filldata(response.data);
@@ -345,7 +345,7 @@ const toPrebill = function () {
 const toNextbill = function () {
   proxy.axios
     .get(
-      "https://localhost:5001/api/Orderbill/Nextbill?billno=" + bill.obj.billno
+      "https://172.16.3.43:5001/api/Orderbill/Nextbill?billno=" + bill.obj.billno
     )
     .then(function (response) {
       filldata(response.data);
@@ -391,7 +391,7 @@ const savebill = () => {
   bill.obj.details=residueRecords
   proxy.axios
   .post(
-    "https://localhost:5001/api/Orderbill/PostOrder" , bill.obj)
+    "https://172.16.3.43:5001/api/Orderbill/PostOrder" , bill.obj)
   .then(function (response) {
     alert('保存成功'+response)
   })
@@ -408,7 +408,7 @@ const delbill = ()=>{
   areyouok(()=>{
     proxy.axios
     .delete(
-      "https://localhost:5001/api/Orderbill/delOrder" , {data:bill.obj})
+      "https://172.16.3.43:5001/api/Orderbill/delOrder" , {data:bill.obj})
       //axios 的delete 方法与post、put不一样，要用data包裹一层，
       //原理是delete第二个参数是config的data不是单纯的data
     .then(function (response) {
