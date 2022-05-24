@@ -389,6 +389,7 @@ const savebill = () => {
   //以上三行，测试各种记录及记录数量，最终要保存到数据库的是‘residueRecords’,如下：
   const residueRecords = xTable.value.getTableData().fullData;  //明细表格的数据
   bill.obj.details=residueRecords
+  //需要确认数据是否为空、合规，此处略 zling
   proxy.axios
   .post(
     "https://172.16.3.43:5001/api/Orderbill/PostOrder" , bill.obj)
