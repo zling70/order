@@ -23,6 +23,8 @@
     const customerData = ref([{"linenum":3,"customer":"c03","custname":"张小飞","custaddress":"株洲"}]);
     const xCustTable = ref({}); //zling 返回响应式代理对象，必须与上面模板中<vxe-table>的 ref="xCustTable",表格渲染后会初始化这个对象
     const { proxy } = getCurrentInstance(); //获取当前vue template实例对象，从中解构出proxy
+    //vue3的响应式函数ref( ),reactive( )返回的都是原值、原对象的代理——对象
+    //当原值、对象发生变化时，捕捉这些值、对象的。学习和使用vue3,需要了解一下Proxy的原理，才好理解。
     //const custdt = reactive({"linenum":3,"customer":"c03","custname":"张小飞","custaddress":"株洲"})
     const emit = defineEmits(['isselected'])  //关键代码，自定义事件名称'isselected',意思是‘我被选择了’
     onMounted(()=>{
