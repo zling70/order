@@ -7,7 +7,7 @@
       :row-config="{ isHover: true }"
       :radio-config="{labelField: 'linenum'}"
       :data="customerData"
-    >
+    ><!--zling radio-config 单选按钮支持,data 初始化数据 -->
       <vxe-column type="radio" title="序号" width="100"></vxe-column>
       <vxe-column field="customer" title="客户编号"></vxe-column>
       <vxe-column field="custname" title="客户名称"></vxe-column>
@@ -15,18 +15,16 @@
     </vxe-table>    
     <vxe-button @click="clickup2p" size="small" icon="vxe-icon--eye" >取回</vxe-button>
     <el-button @click="clickup2p" type="primary" round style="margin-top:8px">取回</el-button>
-    <!--//按钮点击时，在clickup2p函数中调用事件发射emit-->
+    <!--//zling 按钮点击时，在clickup2p函数中调用事件发射emit-->
     </div>
 </template>
 <script setup>
     import { ref, reactive, onMounted,getCurrentInstance ,defineEmits} from "vue"
-    //const {mouont} = app
-    //import { VxeTableInstance } from "vxe-table";
     const customerData = ref([{"linenum":3,"customer":"c03","custname":"张小飞","custaddress":"株洲"}]);
-    const xCustTable = ref({}); //返回响应式代理对象
-    const { proxy } = getCurrentInstance(); //获取实例对象后解构出proxy
+    const xCustTable = ref({}); //zling 返回响应式代理对象，必须与上面模板中<vxe-table>的 ref="xCustTable",表格渲染后会初始化这个对象
+    const { proxy } = getCurrentInstance(); //获取当前vue template实例对象，从中解构出proxy
     //const custdt = reactive({"linenum":3,"customer":"c03","custname":"张小飞","custaddress":"株洲"})
-    const emit = defineEmits(['isselected'])  //关键代码，自定义事件名称'isselected'
+    const emit = defineEmits(['isselected'])  //关键代码，自定义事件名称'isselected',意思是‘我被选择了’
     onMounted(()=>{
           proxy.axios
             .get("https://172.16.3.43:5001/api/Customer")
