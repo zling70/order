@@ -8,6 +8,7 @@ npx vite
 就可以启动运行了。
 
 zling提示：对于关键组件包的引入，关注package.json、vite.config.js、main.js三个文件配合
-
+// https://vitejs.dev/config/   官网参考
+// https://cn.vitejs.dev/guide/
 
 
